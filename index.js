@@ -1,8 +1,11 @@
 import express from "express";
+import bodyParser from "body-parser";
 import path from "path";
-import homepageRouter from "./routes/homepageRoutes.js";
 import connectDB from "./config/connectDB.js";
 import dotenv from "dotenv";
+import homepageRouter from "./routes/homepageRoutes.js";
+import categoryRouter from "./routes/categoryRoutes.js";
+
 
 //configure dotenv
 dotenv.config();
@@ -14,9 +17,7 @@ const __dirname = path.resolve();
 
 // create express app
 const app = express();
-
-
-
+app.use(bodyParser.json());
 
 // set views engine
 app.set("view engine", "ejs");
@@ -27,11 +28,9 @@ app.set("views", "views");
 app.use(express.static(path.join(__dirname,
     "public")));
 
+//use routers
 app.use(homepageRouter);
-
-app.get("/", (req, res) => {
-    res.send("Hello world!")
-});
+app.use(categoryRouter);
 
 //create server and listenning
 app.listen(8082, () => {
