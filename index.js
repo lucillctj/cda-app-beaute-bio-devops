@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import homepageRouter from "./routes/homepageRoutes.js"
 
 const __dirname = path.resolve();
 
@@ -14,6 +15,8 @@ app.set("views", "views");
 
 app.use(express.static(path.join(__dirname,
     "public")));
+
+app.use(homepageRouter);
 
 app.get("/", (req, res) => {
     res.send("Hello world!")
