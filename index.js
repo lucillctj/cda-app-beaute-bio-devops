@@ -2,14 +2,20 @@ import express from "express";
 import path from "path";
 import homepageRouter from "./routes/homepageRoutes.js";
 import connectDB from "./config/connectDB.js";
+import dotenv from "dotenv";
+
+//configure dotenv
+dotenv.config();
+
+// connect to database
+connectDB();
 
 const __dirname = path.resolve();
 
 // create express app
 const app = express();
 
-// connect to database
-connectDB();
+
 
 
 // set views engine
