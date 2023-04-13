@@ -37,7 +37,7 @@ export const updateCategory = async (req, res, next) => {
     const categoryId = req.body.id;
     const categoryName = req.body.categoryName;
     await Category.findByIdAndUpdate({ _id: categoryId}, {categoryName}, {new: true});
-    res.status(200).json({message: `category n° ${categoryId} est modifié !`});
+    res.status(200).json({message: `category n° ${categoryId} is updated!`});
 };
 
 
@@ -45,5 +45,5 @@ export const updateCategory = async (req, res, next) => {
 export const deleteCategory = async (req, res, next) => {
     const categoryId = req.body.id;
     await Category.findByIdAndDelete({_id: categoryId});
-    res.status(200).json({message: `category n° ${categoryId} est supprimé !`});
+    res.status(200).json({message: `category n° ${categoryId} is deleted!`});
 };
