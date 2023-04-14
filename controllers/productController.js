@@ -5,7 +5,10 @@ export const getProducts = async (req, res, next) => {
     const products = await Product.find();
     
     console.log(products);
-    res.status(200).json({products});
+    // res.status(200).json({products});
+    res.status(200).render("products/getAllProducts", { 
+        title: "Products",
+        products: products });
 };
 
 //get product by id
@@ -20,25 +23,33 @@ export const getProductById = async (req, res, next) => {
 export const getProductsSoinsDuCorps = async (req, res, next) => {
     const products = await Product.find({categoryId: '6437b43e926978d81fcf6819'});
     console.log(products);
-    res.status(200).json({products});
+    res.status(200).render("products/getProductsSoinsDuCorps", { 
+        title: "Soins du corps",
+        products: products });
 };
 
 export const getProductsSoinsDuVisage = async (req, res, next) => {
     const products = await Product.find({categoryId: '6437b456926978d81fcf681b'});
     console.log(products);
-    res.status(200).json({products});
+    res.status(200).render("products/getProductsSoinsDuVisage", { 
+        title: "Soins du visage",
+        products: products });
 };
 
 export const getProductsMaquillage = async (req, res, next) => {
     const products = await Product.find({categoryId: '6436c5f0a6e9ad5ceea19171'});
     console.log(products);
-    res.status(200).json({products});
+    res.status(200).render("products/getProductsMaquillage", { 
+        title: "Maquillage",
+        products: products });
 };
 
 export const getProductsBeauteDesMains = async (req, res, next) => {
     const products = await Product.find({categoryId: '6437ba8dc561d8ee4795b256'});
     console.log(products);
-    res.status(200).json({products});
+    res.status(200).render("products/getProductsBeauteDesMains", { 
+        title: "Beauté des mains",
+        products: products });
 };
 
 //create product

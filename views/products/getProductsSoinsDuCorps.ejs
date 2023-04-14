@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/controllers/productController.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title><%= title %></title>
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <img class="logo col-12" src="/logo-beauté-bio.jpg">
+        </div>
+        <h1 class="text-md-right">Institut de beauté Bio</h1>
+        <h2 class="text-md-right">Vente de produits cosmétiques bio et naturels de petits artisans français</h2>
+        
+        <div class="row">
+            <%- include('../navbar') -%>
+        </div>  
+
+        <h3>Soins du corps</h3>
+        <div class="line"></div>            
+        <div class="row">
+            <% for (var i = 0; i < products.length; i++) { %> <!-- Boucle for -->
+                <div class="col-xl-2 col-sm-12">   
+                    <div class="card" style="width: 12rem;">
+                        <img class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%- products[i].productName %></h5>
+                            <p class="card-price"><%= products[i].productPrice %> €</p>
+                            <button href="#" class="btn-detail-product">+ de détails</button>
+                            <button data-id="<%= products[i].productId %>" class="btn-delete-product">Supprimer</button>
+
+                        </div>
+                    </div>
+                </div>
+                <% if ((i + 1) % 5 === 0) { %> 
+                </div> 
+                <div class="row">
+                    <% }} %>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
+

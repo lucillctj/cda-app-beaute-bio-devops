@@ -10,6 +10,11 @@ router.get("/products/soins-du-visage", getProductsSoinsDuVisage);
 router.get("/products/maquillage", getProductsMaquillage);
 router.get("/products/beaute-des-mains", getProductsBeauteDesMains);
 
+router.get("/create-product", (req, res) => {
+    res.render("products/createProduct", { 
+        title: "Ajouter un produit"
+    });
+})
 router.post("/add-product", postProduct);
 router.put("/product", updateProduct);
 router.delete("/product", deleteProduct);

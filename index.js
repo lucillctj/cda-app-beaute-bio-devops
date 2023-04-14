@@ -29,6 +29,8 @@ app.set("views", "views");
 app.use(express.static(path.join(__dirname,
     "public")));
 
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap'));
+
 //use routers
 app.use(homepageRouter);
 app.use(categoryRouter);

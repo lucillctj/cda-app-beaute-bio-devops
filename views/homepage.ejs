@@ -5,9 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/controllers/homepageController.js"></script>
+    <script src="/controllers/productController.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Hello world !!</h1>
-    
+    <main class="container">
+        <div class="row">
+        <img class="logo col-12" src="/logo-beauté-bio.jpg">
+        </div>
+        <h1 class="text-md-right">Institut de beauté Bio</h1>
+        <h2 class="text-md-right">Vente de produits cosmétiques bio et naturels de petits artisans français</h2>
+        
+        <div class="row">
+            <%- include('navbar') -%>
+
+        <%- include('products/getAllProducts'); -%>
+
+    </div>                          
+    </main>
+    <%- include('footer') -%>
 </body>
 </html>

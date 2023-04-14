@@ -1,0 +1,193 @@
+body{
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #D8E5DC;
+    font-family: Geneva, Verdana, sans-serif;
+}
+
+.logo{  
+    /* width: 30vh; */
+    height: 20vh;
+    object-fit: contain;
+}
+
+h1{
+    margin-top: 0.1em;
+    margin-bottom: 0.2em; 
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;  
+}
+
+h2{    
+    font-size: 0.8em;
+    font-weight: 80;
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+h3{
+    margin-top: 0.5em;
+    padding-top: 0em;
+    font-size: 2em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.line {
+    border-bottom:2px solid #548C65;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 3em;
+}
+.line-nav-bar {
+    border-bottom:1.1px solid #548C65;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+button{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    margin-bottom: 1em;
+    background-color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    color: black;
+}
+
+button:hover{
+    background-color: #548C65;
+    color: white;
+}
+
+.btn-detail-product{
+    background-color: #548C65;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+    justify-content: left;
+    margin-left: 0em;
+}
+
+.btn-detail-product:hover{
+    background-color: #235432;
+}
+
+.col-xl-2 {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card{
+    height: 15em;
+    margin-bottom: 2em;
+    justify-content: left;
+}
+.card-img-top{
+    background-color: #ddd; height: 200px;
+}
+.card-body{
+    padding: 0.7em;
+    padding-bottom: 0em;
+}
+.card-title{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.card-price{
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #548C65;
+}
+
+.navbar{
+    margin-right: auto;
+    margin-left: auto;
+}
+.navbar-nav{
+    margin-right: auto;
+    margin-left: auto;
+    color: black;
+    
+}
+.nav-link{
+    color: rgb(55, 55, 55);
+    font-size: 0.7em;
+    font-weight: 100;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+}
+.nav-link::after {
+    content: '|'; 
+    padding-left: 10px; 
+}
+
+.nav-link:hover{
+    color: #548C65; 
+}
+
+.card-form{
+    padding: auto;
+}
+
+form{
+    background-color: white;
+    padding: 1.5em;
+    width: 100vh;
+    margin: 2em;
+}
+
+.form-group{
+    margin-top: 1em;
+    font-size: 0.9em;;
+}
+
+.create-product{
+    margin: 1em;
+    padding-right: 4em;;
+    background-color: #235432;
+    width: 10%;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: white;
+
+}
+
+.btn-detail-product:hover{
+    background-color: #145026;
+}
+
+.contact-section{
+    background-color: white;
+}
+
+.title-contact{
+    margin-left: 10em;
+    font-weight: 500; 
+    font-size: 1.1em;
+   
+}
+.text-contact{
+    margin-left: 10em;
+    margin-bottom: 0.2em;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.logo-footer{  
+    /* width: 30vh; */
+    margin-left: 150vh;
+    height: 20vh;
+    object-fit: contain;
+}

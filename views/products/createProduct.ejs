@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/controllers/productController.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="row">
+        <img class="logo col-12" src="/logo-beauté-bio.jpg">
+    </div>
+    <h1 class="text-md-right">Institut de beauté Bio</h1>
+    <h2 class="text-md-right">Vente de produits cosmétiques bio et naturels de petits artisans français</h2>
+    
+    <div class="row">
+        <%- include('../navbar') -%>
+    </div>  
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6">
+            <container class="card-form">
+                <form id="createProductForm">
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" class="form-control" name="productName">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" name="productDescription">
+                    </div>
+                    <div class="form-group">
+                        <label>Prix</label>
+                        <input type="text" class="form-control" name="productPrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Catégorie</label>
+                        <select multiple class="form-control" id="exampleFormControlSelect2" name="categoryId">
+                            <option value="6437b43e926978d81fcf6819">Soins du corps</option>
+                            <option value="6437b456926978d81fcf681b">Soins du visage</option>
+                            <option value="6436c5f0a6e9ad5ceea19171">Maquillage</option>
+                            <option value="6437ba8dc561d8ee4795b256">Beauté des mains</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="btnCreateProduct" class="create-product">Créer</button>
+                </form>
+            </container>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('createProductForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupère les valeurs des inputs du formulaire
+    const productName = document.getElementsByName('productName')[0].value;
+    const productDescription = document.getElementsByName('productDescription')[0].value;
+    const productPrice = document.getElementsByName('productPrice')[0].value;
+    const categoryId = document.getElementsByName('categoryId')[0].value;
+
+    // Envoie les données dans une requête HTTP POST
+    const response = await fetch('/add-product', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ // Envoie les données dans le corps de la requête en format JSON
+            productName,
+            productDescription,
+            productPrice,
+            categoryId
+        })
+    });
+
+    if (response.ok) {
+        const product = await response.json();
+        console.log('requête effectuée avec succès !', product);
+    } else {
+        console.error('Erreur lors de la création du produit');
+    }
+});
+    </script>
+    
+    
+</body>
+</html>
