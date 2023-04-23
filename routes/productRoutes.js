@@ -4,7 +4,7 @@ import { deleteProduct, updateProduct, getProducts, getProductById, postProduct,
 const router = express.Router();
 
 router.get("/products", getProducts);
-router.get("/product", getProductById);
+router.get("/product/:id", getProductById);
 router.get("/products/soins-du-corps", getProductsSoinsDuCorps);
 router.get("/products/soins-du-visage", getProductsSoinsDuVisage);
 router.get("/products/maquillage", getProductsMaquillage);
@@ -17,6 +17,6 @@ router.get("/create-product", (req, res) => {
 })
 router.post("/add-product", postProduct);
 router.put("/product", updateProduct);
-router.delete("/product", deleteProduct);
+router.delete("/product/:id", deleteProduct);
 
 export default router;

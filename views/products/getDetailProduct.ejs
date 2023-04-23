@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/controllers/productController.js"></script>
+    <script src="/controllers/homepageController.js"></script>
+    
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title><%= title %></title>
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <img class="logo col-12" src="/logo-beauté-bio.jpg">
+        </div>
+        <h1 class="text-md-right">Institut de beauté Bio</h1>
+        <h2 class="text-md-right">Vente de produits cosmétiques bio et naturels de petits artisans français</h2>
+        
+        <div class="row">
+            <%- include('../navbar') -%>                      
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-4">
+                        <img class="card-img-top">
+                    </div>
+                    <div class="col-8">
+                        <h5 class="product-title"><%- product.productName %></h5>
+                        <p class="product-price"><%= product.productPrice %> €</p>
+                        <h6 class="product-description"><%- product.productDescription %></h6>
+                        
+                        <a id="contact" href="#footer" class="btn-action-product">contacter la boutique</a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>                          
+</main>
+<footer id="footer">
+<%- include('../footer') -%>
+</footer>
+
+
+</body>
+</html>
