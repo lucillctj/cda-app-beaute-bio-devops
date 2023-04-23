@@ -21,20 +21,25 @@
         <div class="row">
             <%- include('../navbar') -%>
         </div>  
-
+        
         <h3>Soins du corps</h3>
         <div class="line"></div>            
-        <div class="row">
+        <div class="row all-cards">
             <% for (var i = 0; i < products.length; i++) { %> <!-- Boucle for -->
-                <div class="col-xl-2 col-sm-12">   
-                    <div class="card" style="width: 12rem;">
+                <div class="col-xl-2 col-sm-12 col-cards">   
+                    <div class="card">
                         <img class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title"><%- products[i].productName %></h5>
                             <p class="card-price"><%= products[i].productPrice %> €</p>
-                            <button href="#" class="btn-detail-product">+ de détails</button>
-                            <button data-id="<%= products[i].productId %>" class="btn-delete-product">Supprimer</button>
-
+                            <div class="row">
+                                <div class="col-6 area-btn">
+                                    <a id="showDetailProduct" href="/product/<%= products[i]._id %>" class="button btn-action-product">+ de détails</a>
+                                </div>
+                                <div class="col-6 area-btn">
+                                    <a id="deleteProduct" href="http://localhost:8082/" class="btn-action-product" onclick="deleteProduct('<%= products[i]._id %>')">supprimer</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

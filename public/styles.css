@@ -6,88 +6,57 @@ body{
     font-family: Geneva, Verdana, sans-serif;
 }
 
-.logo{  
+
+
+/* header */
+.logo{
     /* width: 30vh; */
-    height: 20vh;
+    height: 15vh;
     object-fit: contain;
 }
-
 h1{
     margin-top: 0.1em;
-    margin-bottom: 0.2em; 
+    margin-bottom: 0.2em;
     position: relative;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 400;
-    text-align: center;  
+    text-align: center;
 }
-
-h2{    
-    font-size: 0.8em;
+h2{
+    font-size: 0.7em;
     font-weight: 80;
     text-align: center;
     margin-bottom: 1.2em;
 }
-
 h3{
     margin-top: 0.5em;
-    padding-top: 0em;
+    padding-top: 0;
     font-size: 2em;
     font-weight: 500;
     text-align: center;
 }
-
 .line {
     border-bottom:2px solid #548C65;
     width: 40%;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
     margin-bottom: 3em;
 }
-.line-nav-bar {
-    border-bottom:1.1px solid #548C65;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto; 
-}
 
-button{
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    margin-left: 2.5em;
-    margin-right: 2.5em;
-    margin-bottom: 1em;
-    background-color: white;
-    border: none;
-    border-radius: 0.5em;
-    font-size: 1em;
-    color: black;
-}
-
-button:hover{
-    background-color: #548C65;
-    color: white;
-}
-
-.btn-detail-product{
-    background-color: #548C65;
-    color: rgb(255, 255, 255);
-    font-size: 0.7em;
-    justify-content: left;
-    margin-left: 0em;
-}
-
-.btn-detail-product:hover{
-    background-color: #235432;
-}
-
-.col-xl-2 {
+/* card product */
+.all-cards{
     margin-right: auto;
     margin-left: auto;
 }
-
+.col-cards {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
 .card{
+    width: 12rem;
     height: 15em;
     margin-bottom: 2em;
     justify-content: left;
@@ -97,19 +66,42 @@ button:hover{
 }
 .card-body{
     padding: 0.7em;
-    padding-bottom: 0em;
 }
 .card-title{
     font-size: 0.8em;
     font-weight: 300;
 }
-
 .card-price{
     font-size: 0.9em;
     font-weight: 400;
     color: #548C65;
 }
+.btn-action-product{
+    padding: 0.3em 0.8em;
+    margin: auto;
+    background-color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1em;
+    color: black;
+    justify-content: center;
+    background-color: #548C65;
+    color: rgb(255, 255, 255);
+    font-size: 0.7em;
+    text-decoration: none;
+}
+.btn-action-product:hover{
+    background-color: #235432;
+    color: white;
+}
+.area-btn{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
+
+/* menu navbar */
 .navbar{
     margin-right: auto;
     margin-left: auto;
@@ -118,7 +110,6 @@ button:hover{
     margin-right: auto;
     margin-left: auto;
     color: black;
-    
 }
 .nav-link{
     color: rgb(55, 55, 55);
@@ -129,65 +120,107 @@ button:hover{
     align-items: center;
 }
 .nav-link::after {
-    content: '|'; 
-    padding-left: 10px; 
+    content: '|';
+    padding-left: 10px;
 }
-
 .nav-link:hover{
-    color: #548C65; 
+    color: #548C65;
+}
+.line-nav-bar {
+    border-bottom:1px solid #548C65;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* create product form */
 .card-form{
-    padding: auto;
+    display: flex;
+    justify-content: center
 }
-
 form{
     background-color: white;
-    padding: 1.5em;
+    padding: 1em 1.5em 1.5em;
+    border-radius: 1em;
     width: 100vh;
     margin: 2em;
 }
-
 .form-group{
-    margin-top: 1em;
-    font-size: 0.9em;;
-}
+    margin-bottom: 0.8em;
 
-.create-product{
-    margin: 1em;
-    padding-right: 4em;;
-    background-color: #235432;
-    width: 10%;
-    font-size: 1.3em;
+}
+.label{
+    display: block;
+    font-size: 1em;
+    width: 100%;
+}
+.cat-value{
+    font-size: 0.8em;
+}
+.btn-create-product{
+    padding: 0.3em 0.8em;
+    margin: 1em auto;
+    background-color: #548C65;
+    width: 100%;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 1em;
     font-weight: 300;
     color: white;
-
+    display: flex;
+    justify-content: center
+}
+.btn-create-product:hover{
+    background-color: #295d39;
 }
 
-.btn-detail-product:hover{
-    background-color: #145026;
+/* product detail page */
+.product-detail{
+    margin-top: 3.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+}
+.product-title{
+    font-weight: 500;
+    font-size: 1.5em;
+}
+.product-description{
+    font-weight: 300;
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+.product-price{
+    font-weight: 300;
+    font-size: 0.9em;
+    color: #548C65;
 }
 
+/* footer contact */
 .contact-section{
+    padding-top: 3em;
     background-color: white;
 }
-
+.line-footer {
+    border-bottom:1.4px solid #548C65;
+    width: 40%;
+    margin-bottom: 1em;
+    margin-left: 14em;
+}
 .title-contact{
-    margin-left: 10em;
-    font-weight: 500; 
-    font-size: 1.1em;
-   
+    padding-left: 12em;
+    font-weight: 500;
+    font-size: 1.2em;
+
 }
 .text-contact{
-    margin-left: 10em;
-    margin-bottom: 0.2em;
-    font-size: 0.9em;
+    padding-left: 18em;
     font-weight: 300;
+    font-size: 0.8em;
+    margin-bottom: 0.2em;
 }
-
-.logo-footer{  
-    /* width: 30vh; */
-    margin-left: 150vh;
-    height: 20vh;
+.logo-footer{
+    height: 32vh;
     object-fit: contain;
+    margin-bottom: 3em;
 }
